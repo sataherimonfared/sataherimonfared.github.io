@@ -366,7 +366,128 @@
 
 
 
+<section id="publications">
+  <h2>Publications</h2>
+  <p class="publication-info">
+    Peer-reviewed journal publications (authors ordered alphabetically)
+  </p>
 
+  <!-- Year filter buttons -->
+  <div class="year-buttons">
+    <button data-year="all">All</button>
+    <button data-year="2024">2024</button>
+    <button data-year="2023">2023</button>
+    <button data-year="2022">2022</button>
+    <button data-year="2021">2021</button>
+    <button data-year="2020">2020</button>
+    <button data-year="2019">≤2019</button>
+  </div>
+
+  <!-- Publications table -->
+  <table class="pub-table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Journal / Reference</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-year="2024">
+        <td>
+          <a href="https://arxiv.org/abs/2312.08655" target="_blank">
+            The small k<sub>T</sub> region in Drell–Yan production at next-to-leading order with the parton branching method
+          </a>
+        </td>
+        <td>
+          <a href="https://link.springer.com/article/10.1140/epjc/s10052-024-12507-0" target="_blank">
+            Eur. Phys. J. C 84 (2024) 154
+          </a>
+        </td>
+      </tr>
+
+      <tr data-year="2022">
+        <td>
+          <a href="https://arxiv.org/abs/2204.01528" target="_blank">
+            Back-to-back azimuthal correlations in Z+jet events at high transverse momentum
+          </a>
+        </td>
+        <td>
+          <a href="https://link.springer.com/article/10.1140/epjc/s10052-022-10715-0" target="_blank">
+            Eur. Phys. J. C 82 (2022) 755
+          </a>
+        </td>
+      </tr>
+
+      <tr data-year="2021">
+        <td>
+          <a href="https://link.springer.com/article/10.1140/epjc/s10052-021-09203-8" target="_blank">
+            CASCADE3: A Monte Carlo event generator based on TMDs
+          </a>
+        </td>
+        <td>
+          Eur. Phys. J. C 81 (2021) 425
+        </td>
+      </tr>
+
+      <tr data-year="2019">
+        <td>
+          <a href="https://doi.org/10.1103/PhysRevD.100.074027" target="_blank">
+            Production of Z-bosons in the parton branching method
+          </a>
+        </td>
+        <td>
+          Phys. Rev. D 100, 074027 (2019)
+        </td>
+      </tr>
+
+      <!-- add remaining rows with data-year="YYYY" -->
+    </tbody>
+  </table>
+</section>
+
+<!-- Minimal JS for filtering -->
+<script>
+  const buttons = document.querySelectorAll('.year-buttons button');
+  const rows = document.querySelectorAll('.pub-table tbody tr');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const year = btn.getAttribute('data-year');
+
+      rows.forEach(row => {
+        const rowYear = row.getAttribute('data-year');
+        if (year === 'all') {
+          row.style.display = '';
+        } else if (year === '2019') { // ≤2019
+          row.style.display = parseInt(rowYear) <= 2019 ? '' : 'none';
+        } else {
+          row.style.display = rowYear === year ? '' : 'none';
+        }
+      });
+    });
+  });
+</script>
+
+<!-- Optional CSS for nice button spacing -->
+<style>
+  .year-buttons {
+    margin-bottom: 15px;
+  }
+  .year-buttons button {
+    margin-right: 5px;
+    padding: 5px 12px;
+    cursor: pointer;
+    border: 1px solid #888;
+    border-radius: 4px;
+    background: #f8f8f8;
+  }
+  .year-buttons button:hover {
+    background: #e0e0e0;
+  }
+</style>
+
+
+    
 
 
 
