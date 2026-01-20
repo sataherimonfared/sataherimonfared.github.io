@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const buttons = document.querySelectorAll(".year-buttons button");
   const rows = document.querySelectorAll(".pub-table tbody tr");
 
+  buttons.forEach(b => b.classList.remove("active"));
+  button.classList.add("active");
+
+  
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const year = button.dataset.year;
