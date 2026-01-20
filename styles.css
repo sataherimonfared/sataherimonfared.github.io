@@ -13,8 +13,12 @@ header {
     background-color: #004080;
     color: white;
     padding: 30px 20px;
-    text-align: center;
+    display: flex;           /* new */
+    align-items: center;     /* new */
+    gap: 20px;               /* new spacing between picture and text */
+    justify-content: flex-start; /* optional, aligns content to the left */
 }
+
 
 header h1 {
     margin: 0;
