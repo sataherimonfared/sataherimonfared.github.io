@@ -74,6 +74,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Awards Toggle Logic
+  const toggleAwardsBtn = document.getElementById('toggle-awards-btn');
+  const awardsContent = document.getElementById('awards-content');
+
+  if (toggleAwardsBtn && awardsContent) {
+    toggleAwardsBtn.addEventListener('click', () => {
+      const isHidden = window.getComputedStyle(awardsContent).display === 'none';
+      if (isHidden) {
+        awardsContent.style.display = 'block';
+        toggleAwardsBtn.textContent = 'Hide Awards';
+      } else {
+        awardsContent.style.display = 'none';
+        toggleAwardsBtn.textContent = 'Show Awards';
+      }
+    });
+  }
+
+  // Supervision Toggle Logic
+  const toggleSupervisionBtn = document.getElementById('toggle-supervision-btn');
+  const supervisionContent = document.getElementById('supervision-content');
+
+  if (toggleSupervisionBtn && supervisionContent) {
+    toggleSupervisionBtn.addEventListener('click', () => {
+      const isHidden = window.getComputedStyle(supervisionContent).display === 'none';
+      if (isHidden) {
+        supervisionContent.style.display = 'block';
+        toggleSupervisionBtn.textContent = 'Hide Supervision';
+      } else {
+        supervisionContent.style.display = 'none';
+        toggleSupervisionBtn.textContent = 'Show Supervision';
+      }
+    });
+  }
+
   // Publication Details (Expand/Collapse on click)
   const pubMains = document.querySelectorAll('.pub-main');
   pubMains.forEach(main => {

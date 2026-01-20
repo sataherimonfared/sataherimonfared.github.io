@@ -122,6 +122,29 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Special list for nested items (e.g., in Supervision) */
+.special-list {
+    list-style-type: circle;
+    margin: 10px 0 10px 20px;
+    padding-left: 0;
+}
+
+.special-list li {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+/* Publications Grid */
+.pub-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
 /* Sections */
 section {
     max-width: 1000px;
