@@ -1,164 +1,293 @@
+/* CSS Variable Definitions for a Modern Design System */
+:root {
+    --primary-color: #004080;
+    --primary-hover: #0056b3;
+    --secondary-color: #f0f4f8;
+    --text-color: #2d3748;
+    --text-light: #718096;
+    --white: #ffffff;
+    --bg-color: #f7fafc;
+    --header-bg: linear-gradient(135deg, #004080 0%, #002d5a 100%);
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --transition: all 0.3s ease;
+    --font-main: 'Inter', sans-serif;
+    --font-heading: 'Outfit', sans-serif;
+}
+
 /* General Page Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-main);
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 /* Header */
 header {
-    background-color: #004080;
-    color: white;
-    padding: 30px 20px;
-    display: flex;           /* new */
-    align-items: center;     /* new */
-    gap: 20px;               /* new spacing between picture and text */
-    justify-content: flex-start; /* optional, aligns content to the left */
+    background: var(--header-bg);
+    color: var(--white);
+    padding: 60px 20px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
+.header-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.header-text {
+    flex: 1;
+    min-width: 300px;
+}
 
 header h1 {
-    margin: 0;
-    font-size: 2.5em;
+    font-family: var(--font-heading);
+    margin: 0 0 10px 0;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
-header p {
-    margin: 5px 0;
-    font-size: 1.1em;
+.affiliation {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.95rem;
+}
+
+.contact-info p {
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    word-break: break-all;
+}
+
+.contact-info i {
+    width: 20px;
+    margin-top: 4px;
+    /* Align with first line of text */
+    color: rgba(255, 255, 255, 0.7);
+    flex-shrink: 0;
+}
+
+.contact-info a {
+    color: var(--white);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: var(--transition);
+}
+
+.contact-info a:hover {
+    color: #a3c1ff;
+}
+
+.profile-pic {
+    width: 280px;
+    height: 280px;
+    border-radius: 24px;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+}
+
+.profile-pic:hover {
+    transform: scale(1.02);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 /* Links */
 a {
-    color: #004080;
+    color: var(--primary-color);
     text-decoration: none;
+    transition: var(--transition);
 }
 
 a:hover {
+    color: var(--primary-hover);
     text-decoration: underline;
 }
 
 /* Sections */
 section {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 0 20px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
 }
 
 section h2 {
-    color: #004080;
-    border-bottom: 2px solid #004080;
-    padding-bottom: 5px;
-    margin-bottom: 15px;
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 1.75rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
 }
 
-/* Lists */
-ul {
+/* Project Lists */
+#projects ul {
     list-style-type: none;
     padding-left: 0;
 }
 
-ul li {
-    padding: 5px 0;
+#projects li {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+#projects li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+#projects li a {
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#projects li em {
+    font-style: normal;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    display: block;
+    line-height: 1.6;
+}
+
+/* Publications Section Styling */
+.year-buttons {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.year-buttons button {
+    background-color: var(--white);
+    border: 1px solid #e2e8f0;
+    color: var(--text-color);
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.year-buttons button:hover,
+.year-buttons button.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+.pub-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+.pub-cell {
+    background: var(--bg-color);
+    border-radius: 10px;
+    padding: 15px !important;
+    transition: var(--transition);
+}
+
+.pub-cell:hover {
+    background: #edf2f7;
+    transform: translateY(-2px);
+}
+
+.pub-main {
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pub-details {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Publications Toggle */
+.toggle-publications-btn {
+    display: block;
+    width: fit-content;
+    margin: 20px 0;
+    padding: 12px 24px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.toggle-publications-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+#publications-content {
+    display: none;
+    /* Hidden by default */
 }
 
 /* Footer */
 footer {
-    background-color: #004080;
-    color: white;
     text-align: center;
-    padding: 15px 0;
-    margin-top: 40px;
+    padding: 40px 20px;
+    color: var(--text-light);
+    font-size: 0.9rem;
 }
 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
 
-/* ============================= */
-/* Publications Section Styling */
-/* ============================= */
+    .contact-info p {
+        justify-content: center;
+    }
 
-.year-buttons {
-    margin-bottom: 15px;
+    header h1 {
+        font-size: 2.25rem;
+    }
+
+    .profile-pic {
+        width: 200px;
+        height: 200px;
+    }
+
+    section {
+        margin: 20px;
+        padding: 20px;
+    }
 }
-
-.year-buttons button {
-    background-color: #e6eef7;
-    border: 1px solid #004080;
-    color: #004080;
-    padding: 5px 10px;
-    margin: 3px;
-    cursor: pointer;
-    font-size: 0.9em;
-}
-
-.year-buttons button:hover {
-    background-color: #004080;
-    color: white;
-}
-
-/* Publications table */
-.pub-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.pub-table td {
-    padding: 6px 4px;
-    vertical-align: top;
-}
-
-/* Publication cell */
-.pub-cell {
-    padding-bottom: 6px;
-}
-
-/* Always-visible reference */
-.pub-main {
-    cursor: pointer;
-    font-weight: normal;
-}
-
-.pub-main::after {
-    content: " ⓘ";
-    font-size: 0.85em;
-    color: #777;
-}
-
-/* Hidden title (expandable) */
-.pub-details {
-    font-size: 0.9em;
-    line-height: 1.35;
-    color: #444;
-    margin-top: 3px;
-
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-}
-
-/* Desktop hover */
-.pub-cell:hover .pub-details {
-    max-height: 8em;
-}
-
-.pub-main a {
-    color: #004080;
-}
-
-
-.year-buttons button.active {
-  background-color: #004080;
-  color: white;
-}
-
-.profile-pic {
-    width: 250px;       /* adjust size */
-    height: 250px;      /* optional, keeps square */
-    border-radius: 50%; /* makes it circular */
-    object-fit: cover;  /* crop to fit square */
-    display: block;
-    margin: 0 auto 10px; /* center above name */
-    border: 3px solid #004080; /* optional frame */
-}
-
