@@ -148,3 +148,13 @@ footer {
   color: white;
 }
 
+.profile-pic {
+    width: 150px;       /* adjust size */
+    height: 150px;      /* optional, keeps square */
+    border-radius: 50%; /* makes it circular */
+    object-fit: cover;  /* crop to fit square */
+    display: block;
+    margin: 0 auto 10px; /* center above name */
+    border: 3px solid #004080; /* optional frame */
+}
+
