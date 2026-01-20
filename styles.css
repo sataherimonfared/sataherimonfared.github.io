@@ -138,3 +138,6 @@ footer {
     max-height: 8em;
 }
 
+.pub-main a {
+    color: #004080;
+}
