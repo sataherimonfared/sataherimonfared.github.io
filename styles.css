@@ -68,3 +68,73 @@ footer {
     padding: 15px 0;
     margin-top: 40px;
 }
+
+
+/* ============================= */
+/* Publications Section Styling */
+/* ============================= */
+
+.year-buttons {
+    margin-bottom: 15px;
+}
+
+.year-buttons button {
+    background-color: #e6eef7;
+    border: 1px solid #004080;
+    color: #004080;
+    padding: 5px 10px;
+    margin: 3px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.year-buttons button:hover {
+    background-color: #004080;
+    color: white;
+}
+
+/* Publications table */
+.pub-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pub-table td {
+    padding: 6px 4px;
+    vertical-align: top;
+}
+
+/* Publication cell */
+.pub-cell {
+    padding-bottom: 6px;
+}
+
+/* Always-visible reference */
+.pub-main {
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.pub-main::after {
+    content: " ⓘ";
+    font-size: 0.85em;
+    color: #777;
+}
+
+/* Hidden title (expandable) */
+.pub-details {
+    font-size: 0.9em;
+    line-height: 1.35;
+    color: #444;
+    margin-top: 3px;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+/* Desktop hover */
+.pub-cell:hover .pub-details {
+    max-height: 8em;
+}
+
