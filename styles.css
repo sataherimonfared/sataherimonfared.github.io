@@ -141,3 +141,10 @@ footer {
 .pub-main a {
     color: #004080;
 }
+
+
+.year-buttons button.active {
+  background-color: #004080;
+  color: white;
+}
+
