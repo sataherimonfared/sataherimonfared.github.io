@@ -40,13 +40,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Conference Toggle Logic
+  // Conference Main Toggle
+  const mainToggleBtn = document.getElementById('main-toggle-talks-btn');
+  const conferenceContainer = document.getElementById('conference-timeline-container');
+
+  if (mainToggleBtn && conferenceContainer) {
+    mainToggleBtn.addEventListener('click', () => {
+      const isHidden = window.getComputedStyle(conferenceContainer).display === 'none';
+      if (isHidden) {
+        conferenceContainer.style.display = 'block';
+        mainToggleBtn.textContent = 'Hide Presentation';
+      } else {
+        conferenceContainer.style.display = 'none';
+        mainToggleBtn.textContent = 'Show Presentation';
+      }
+    });
+  }
+
+  // Conference Secondary Toggle (Older Talks)
   const toggleTalksBtn = document.getElementById('toggle-talks-btn');
   const extraTalks = document.getElementById('extra-talks');
 
   if (toggleTalksBtn && extraTalks) {
     toggleTalksBtn.addEventListener('click', () => {
-      const isHidden = extraTalks.style.display === 'none';
+      const isHidden = window.getComputedStyle(extraTalks).display === 'none';
       if (isHidden) {
         extraTalks.style.display = 'block';
         toggleTalksBtn.textContent = 'Hide Older Talks';
