@@ -40,6 +40,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Conference Toggle Logic
+  const toggleTalksBtn = document.getElementById('toggle-talks-btn');
+  const extraTalks = document.getElementById('extra-talks');
+
+  if (toggleTalksBtn && extraTalks) {
+    toggleTalksBtn.addEventListener('click', () => {
+      const isHidden = extraTalks.style.display === 'none';
+      if (isHidden) {
+        extraTalks.style.display = 'block';
+        toggleTalksBtn.textContent = 'Hide Older Talks';
+      } else {
+        extraTalks.style.display = 'none';
+        toggleTalksBtn.textContent = 'Show More Talks';
+      }
+    });
+  }
+
   // Publication Details (Expand/Collapse on click)
   const pubMains = document.querySelectorAll('.pub-main');
   pubMains.forEach(main => {

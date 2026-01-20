@@ -257,6 +257,112 @@ section h2 {
     /* Hidden by default */
 }
 
+/* Conference Presentations Timeline */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 20px 0;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--secondary-color);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -35px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    border: 3px solid var(--white);
+    box-shadow: 0 0 0 3px var(--secondary-color);
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+}
+
+.timeline-content {
+    background: var(--bg-color);
+    padding: 20px;
+    border-radius: 12px;
+    transition: var(--transition);
+}
+
+.timeline-item:hover .timeline-content {
+    background: var(--white);
+    box-shadow: var(--card-shadow);
+    transform: translateX(5px);
+}
+
+.timeline-content h3 {
+    margin: 0 0 10px 0;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.timeline-content .location {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.timeline-content .talk-title {
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--primary-color);
+}
+
+.timeline-content .note {
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* Secondary Toggle Button (for Conference & others) */
+.secondary-toggle-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 10px;
+}
+
+.secondary-toggle-btn:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -289,5 +395,13 @@ footer {
     section {
         margin: 20px;
         padding: 20px;
+    }
+
+    .timeline {
+        padding-left: 20px;
+    }
+
+    .timeline-dot {
+        left: -26px;
     }
 }
