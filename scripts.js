@@ -108,6 +108,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Projects Toggle Logic
+  const toggleProjectsBtn = document.getElementById('toggle-projects-btn');
+  const projectsContent = document.getElementById('projects-content');
+
+  if (toggleProjectsBtn && projectsContent) {
+    toggleProjectsBtn.addEventListener('click', () => {
+      const isHidden = window.getComputedStyle(projectsContent).display === 'none';
+      if (isHidden) {
+        projectsContent.style.display = 'block';
+        toggleProjectsBtn.textContent = 'Hide Projects';
+      } else {
+        projectsContent.style.display = 'none';
+        toggleProjectsBtn.textContent = 'Show Projects';
+      }
+    });
+  }
+
   // Publication Details (Expand/Collapse on click)
   const pubMains = document.querySelectorAll('.pub-main');
   pubMains.forEach(main => {
